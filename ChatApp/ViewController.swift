@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
+        
+        //add item on the bar
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        
+    }//end view did load
+    
+    func handleLogout(){
+        //show the login page, through the loginController class
+        present(loginController(), animated: true, completion: nil)
+    }//end handle logout
+    
+}//end class
 
